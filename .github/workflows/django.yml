@@ -18,25 +18,22 @@ jobs:
       with:
         python-version: '3.10'
     
-    - name: Create virtual environment
+    - name: Install dependencies and Deploy
       run: |
         python -m venv venv
-        source venv/bin/activate  # Activate the virtual environment (this will be effective only in the current run)
-    
-    - name: Install dependencies
-      run: |
-        source venv/bin/activate  # Activate the virtual environment
+        source venv/bin/activate
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-   
-    # - name: Run database migrations
-    #   run: |
-    #     source venv/bin/activate
-    #     python manage.py migrate
+        # Uncomment if you want to run migrations
+        # python manage.py migrate
+        # Now, deploy
+        echo "Deploying to Azure App Service..."
+        # Use the Azure CLI or any method to deploy if needed
+        # This might be adjusted depending on your deployment method
+        # You can also use azure/webapps-deploy if it fits your workflow
 
     - name: Deploy to Azure App Service
       uses: azure/webapps-deploy@v2
       with:
         app-name: azapp-test-dev-001   # Your Azure App Service name
-        # slot-name: 'production'
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
