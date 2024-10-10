@@ -13,7 +13,7 @@ from django.core.wsgi import get_wsgi_application
 
 # os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ventrure_view.settings')  ##Default/Original setting
 
-settings_module = 'venture_view.production' if 'WEBSITE_HOSTNAME' in os.environ else 'venture_view.settings'
+settings_module = 'ventrure_view.production' if 'WEBSITE_HOSTNAME' in os.environ else 'ventrure_viewiew.settings'
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
 
 application = get_wsgi_application()

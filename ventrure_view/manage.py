@@ -8,7 +8,7 @@ def main():
     """Run administrative tasks."""
     # os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ventrure_view.settings')  #Default/Oroginal settings
     
-    settings_module = 'venture_view.production' if 'WEBSITE_HOSTNAME' in os.environ else 'venture_view.settings'
+    settings_module = 'ventrure_view.production' if 'WEBSITE_HOSTNAME' in os.environ else 'ventrure_view.settings'
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
 
     try:
