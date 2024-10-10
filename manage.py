@@ -6,10 +6,10 @@ import sys
 
 def main():
     """Run administrative tasks."""
-    # os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ventrure_view.settings')  #Default/Oroginal settings
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ventrure_view.settings')  #Default/Oroginal settings
     
-    settings_module = 'ventrure_view.production' if 'WEBSITE_HOSTNAME' in os.environ else 'ventrure_view.settings'
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
+    # settings_module = 'ventrure_view.production' if 'WEBSITE_HOSTNAME' in os.environ else 'ventrure_view.settings'
+    # os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
 
     try:
         from django.core.management import execute_from_command_line
